@@ -12,8 +12,20 @@ public class AdjMatrixGraph implements Graph{
 
     public void  addEdge(Edge e){
         Vertex v1=e.getExtremites()[0];
-        Vertex v1=e.getExtremites()[1];
-        
+        Vertex v2=e.getExtremites()[1];
+        LinkedList iterator;
+        int i=0;
+        boolean flag=False;
+        while ((i<adjacencyList.size())&&(!flag)){
+            iterator=get(i);
+            if (iterator.getFirst().getNum()==v1.getNum()){
+                iterator.add(v2);
+                flag=True;
+            }
+        }
+
+        if i=adjacencyList.size()
+
     }  
 
 	
