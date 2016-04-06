@@ -4,10 +4,10 @@ import graph.*;
 
 public class AdjMatrixGraph implements Graph{
     public boolean[][] adjacency;
-    public Vertex[] vertice;
-    public Edge[] edges;
+    public Vertex[] vertice = new Vertex[50];
+    public Edge[] edges = new Edge[50];
 
-    private void AdjMatrixGraph(){
+    public AdjMatrixGraph(){
 		for(int i=0;i<50;i++){
             for (int j=0;j<50;j++){
                 adjacency[i][j]=false;

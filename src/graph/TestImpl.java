@@ -1,6 +1,9 @@
 package graph;
-private class TestImpl {
-	Graph g = new AdjMatrixGraph();
-	Vertex v = new Vertex();
-	g.addVertex(v);
+
+public class TestImpl {
+    public static void main(String[] args) {
+        AdjMatrixGraph g = new AdjMatrixGraph();
+        Vertex v = new Vertex(1);
+        g.addVertex(v);
+    }
 }
