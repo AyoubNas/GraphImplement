@@ -3,7 +3,7 @@ import java.util.*;
 import graph.*;
 
 public class AdjMatrixGraph implements Graph{
-	public boolean[][] adjacency;
+    public boolean[][] adjacency;
     public Vertex[] vertice;
     public Edge[] edges;
 
@@ -27,8 +27,13 @@ public class AdjMatrixGraph implements Graph{
     public Edge[] adjascentEdges(Vertex v){}
     public boolean edgeIsInGaph(Vertex v)  {}
     public  Edge getEdgeBetween(Vertex source, Vertex dest){}
-    public Edge[] getEdges(){}
-    public Vertex[] getVertexes()    {}
+    public Edge[] getEdges(){
+	return this.edges;
+    }
+    public Vertex[] getVertexes()    {
+	return this.vertices;
+    }
+
     public boolean isAdjacent(Edge E1, Edge E2)  {}
     public void removeEdge(Edge edge)  {}
     public void removeVertex(Vertex vertex)  {}
