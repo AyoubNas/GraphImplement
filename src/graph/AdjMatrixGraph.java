@@ -34,8 +34,25 @@ public class AdjMatrixGraph implements Graph{
 	return this.vertices;
     }
 
-    public boolean isAdjacent(Edge E1, Edge E2)  {}
-    public void removeEdge(Edge edge)  {}
+    public boolean isAdjacent(Edge E1, Edge E2)  {
+        return false;
+	}
+	}
+    public void removeEdge(Edge edge)  {
+        Edge[(edges.length)-1] newEdges;
+        int i=0;
+        int j=0;
+        while (i<newEdges.length){
+            if (edges[i].equals(edge)) {
+                newEdges[j]=edges[i];
+                i++;
+                j++;
+            }
+            else i++;
+            }
+        edge=newEdges;
+}
+
     public void removeVertex(Vertex vertex)  {}
 
 
