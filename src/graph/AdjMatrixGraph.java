@@ -52,7 +52,22 @@ public class AdjMatrixGraph implements Graph{
         edges=newEdges;
 }
 
-    public void removeVertex(Vertex vertex)  {}
+    public void removeVertex(Vertex vertex)  {
+        
+        Vertex[] newVertice= new Vertex[(vertice.length)-1];
+        int i=0;
+        int j=0;
+        while (i<newVertice.length){
+            if (edges[i].equals(vertex)) {
+                newVertice[j]=vertice[i];
+                i++;
+                j++;
+            }
+            else i++;
+        }
+        vertice=newVertice;
+    
+    }
 
 
     
