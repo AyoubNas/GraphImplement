@@ -111,20 +111,18 @@ public class AdjMatrixGraph implements Graph{
 }
 
     public void removeVertex(Vertex vertex)  {
-        
-        Vertex[] newVertice= new Vertex[(vertice.length)-1];
         int i=0;
-        int j=0;
-        while (i<newVertice.length){
-            if (edges[i].equals(vertex)) {
-                newVertice[j]=vertice[i];
-                i++;
-                j++;
-            }
-            else i++;
-        }
-        vertice=newVertice;
-    
+        boolean flag=false;
+        for(i=0;i<=lastVertex;i++){
+		if (vertice[i].equals(vertex)){
+			v=i;
+		}
+		i=0;
+		for (i=v;i<lastVertex;i++){
+		        
+		}
+        
+        
     }
 	public boolean isAdjacent(Edge E1, Edge E2)  {
 	
@@ -165,3 +163,4 @@ public class AdjMatrixGraph implements Graph{
 
     
 }
+

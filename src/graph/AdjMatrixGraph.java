@@ -117,7 +117,7 @@ public class AdjMatrixGraph implements Graph{
 		if (vertice[i].equals(vertex)){
 			v=i;
 		}
-		i=0;
+		i=0;                                                                                 u
 		for (i=v;i<lastVertex;i++){
 		        
 		}
