@@ -112,18 +112,37 @@ public class AdjMatrixGraph implements Graph{
 
     public void removeVertex(Vertex vertex)  {
         int i=0;
+        int v=-1;
         boolean flag=false;
+        int j=0;
         for(i=0;i<=lastVertex;i++){
-		if (vertice[i].equals(vertex)){
-			v=i;
+			if (vertice[i].equals(vertex)){
+				v=i;
+			}
 		}
-		i=0;                                                                                 u
+		i=0;                                                                                 
 		for (i=v;i<lastVertex;i++){
-		        
+			vertice[i]=vertice[i+1];			        
 		}
-        
-        
+
+		
+		for(i=v;i<=lastVertex;i++){
+			for(j=0;j<=lastVertex;j++){
+				adjacencyMatrix[i][j]=adjacencyMatrix[i+1][j];
+			} 
+		}
+
+		for(i=v;i<=lastVertex;i++){
+			for(j=0;j<=lastVertex;j++){
+				adjacencyMatrix[i][j]=adjacencyMatrix[i][j+1];
+			} 
+		}
+
+
+    lastVertex--;    
     }
+
+
 	public boolean isAdjacent(Edge E1, Edge E2)  {
 	
         return ((E1.getExtremites()[0].equals(E2.getExtremites()[1])^(E1.getExtremites()[1].equals(E2.getExtremites()[0]))));
