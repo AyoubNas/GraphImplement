@@ -30,26 +30,9 @@ public class AdjMatrixGraph implements Graph{
     public void  addEdge(Edge e){
 	Vertex source=e.getExtremites()[0];
 	Vertex dest=e.getExtremites()[1];
-	int d=-1;
-	int s=-1;
-	int i=0;
 
         edges[lastEdge+1]=e;
-        lastEdge++;
-        
-         for(i=0;i<lastVertex;i++){
-		    if (vertice[i].equals(source)){
-			    s=i;
-		    }
-		    if (vertice[i].equals(dest)){
-			    d=i;
-		    }
-	    }
-	    
-	    adjacencyMatrix[s][d]=true;
-	    if (e instanceof UndirectedEdge){
-	        adjacencyMatrix[d][s]=true;
-	    }
+         lastEdge++;
 	 
 	 
 
@@ -71,10 +54,10 @@ public class AdjMatrixGraph implements Graph{
 	Edge e=null;
 	Vertex source=null;
 	Vertex dest=null;
-	int d=-1;
-	int s=-1;
+	int d;
+	int s;
 
-	while((i<=lastEdge)&&(!flag)){
+	while((i<=lastEdge)(!flag)){
 	    if (edges[i].equals(edge)){
 		flag=true;
 		e=edges[i];
@@ -85,7 +68,7 @@ public class AdjMatrixGraph implements Graph{
 	    }
 	}
 	while(i<lastEdge){
-	    edges[i]=edges[i+1];
+	    edges[i]=edges[i+1]
 		i++;
 	}
 	lastEdge--;
@@ -93,18 +76,16 @@ public class AdjMatrixGraph implements Graph{
 	if (e!=null){
 	    source=e.getExtremites()[0];
 	    dest=e.getExtremites()[1];
-	    for(i=0;i<lastVertex;i++){
-		if (vertice[i].equals(source)){
+	    for(i=0;i<lastVertex){
+		if (vertice[i].equals(source){
 			s=i;
 		}
-		if (vertice[i].equals(dest)){
+		if (vertice[i].equals(dest){
 			d=i;
 		}
 	    }
 	    adjacencyMatrix[s][d]=false;
-		    if(edge instanceof UndirectedEdge){
-		        adjacencyMatrix[d][s]=false;
-		    }
+		    if(edge instanceof UndirectedEdge){ adjacencyMatrix[d][s]=false;}
 	}
 
 	    
