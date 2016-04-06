@@ -21,10 +21,15 @@ public class AdjMatrixGraph implements Graph{
     }
 
      public void addVertex(Vertex v){
-         vertice[lastVertex+1]=v;
-         lastVertex++;
+     	int i=0;
+        vertice[lastVertex+1]=v;
+        lastVertex++;
 
-        
+        for(i=0;i<=lastVertex;i++){
+
+        	adjacencyMatrix[i][lastVertex]=false;
+        	adjacencyMatrix[lastVertex][i]=false;
+        }        
     }
 
     public void  addEdge(Edge e){
@@ -149,14 +154,13 @@ public class AdjMatrixGraph implements Graph{
 	}
 
     public Edge[] adjascentEdges(Vertex v){
-    
-        int i=0;
-	return null;
+    	return null;
     }
     
     public boolean edgeIsInGaph(Vertex v)  {
+    	return false;
     
-        return false;
+
     }
     
     public  Edge getEdgeBetween(Vertex source, Vertex dest){
