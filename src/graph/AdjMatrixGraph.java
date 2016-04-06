@@ -24,22 +24,21 @@ public class AdjMatrixGraph implements Graph{
 
     }
 
-    public Edge[] adjascentEdges(Vertex v){}
-    public boolean edgeIsInGaph(Vertex v)  {}
-    public  Edge getEdgeBetween(Vertex source, Vertex dest){}
+    public Edge[] adjascentEdges(Vertex v){return null;}
+    public boolean edgeIsInGaph(Vertex v)  {return false;}
+    public  Edge getEdgeBetween(Vertex source, Vertex dest){return null;}
     public Edge[] getEdges(){
 	return this.edges;
     }
     public Vertex[] getVertexes()    {
-	return this.vertices;
+	return this.vertice;
     }
 
     public boolean isAdjacent(Edge E1, Edge E2)  {
         return false;
 	}
-	}
     public void removeEdge(Edge edge)  {
-        Edge[(edges.length)-1] newEdges;
+        Edge[] newEdges= new Edge[(edges.length)-1];
         int i=0;
         int j=0;
         while (i<newEdges.length){
@@ -50,7 +49,7 @@ public class AdjMatrixGraph implements Graph{
             }
             else i++;
             }
-        edge=newEdges;
+        edges=newEdges;
 }
 
     public void removeVertex(Vertex vertex)  {}
