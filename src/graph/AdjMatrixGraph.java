@@ -1,32 +1,38 @@
-import java.util.*;
 package graph;
+import java.util.*;
+import graph.*;
 
 public class AdjMatrixGraph implements Graph{
-	private LinkedList<LinkedList<Vertex>> adjacencyList= new LinkedList();
+	public boolean[][] adjacency;
+    public Vertex[] vertice;
+    public Edge[] edges;
 
-    private void addVertex(Vertex v){
-		LinkedList<Vertex> l = new LinkedList();
-		l.add(v);
-		adjacencyList.add(l);
-	}
-
-    public void  addEdge(Edge e){
-        Vertex v1=e.getExtremites()[0];
-        Vertex v2=e.getExtremites()[1];
-        LinkedList iterator;
-        int i=0;
-        boolean flag=False;
-        while ((i<adjacencyList.size())&&(!flag)){
-            iterator=get(i);
-            if (iterator.getFirst().getNum()==v1.getNum()){
-                iterator.add(v2);
-                flag=True;
+    private void AdjMatrixGraph(){
+		for(int i=0;i<50;i++){
+            for (int j=0;j<50;j++){
+                adjacency[i][j]=false;
             }
         }
+	}
 
-        if i=adjacencyList.size()
+     public void addVertex(Vertex v){
 
-    }  
+        
+    }
 
-	
+    public void  addEdge(Edge e){
+
+    }
+
+    public Edge[] adjascentEdges(Vertex v){}
+    public boolean edgeIsInGaph(Vertex v)  {}
+    public  Edge getEdgeBetween(Vertex source, Vertex dest){}
+    public Edge[] getEdges(){}
+    public Vertex[] getVertexes()    {}
+    public boolean isAdjacent(Edge E1, Edge E2)  {}
+    public void removeEdge(Edge edge)  {}
+    public void removeVertex(Vertex vertex)  {}
+
+
+    
 }
