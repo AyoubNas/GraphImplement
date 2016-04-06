@@ -16,11 +16,17 @@ public class AdjMatrixGraph implements Graph{
 	}
 
      public void addVertex(Vertex v){
+         Vertex[]newVertice = Arrays.copyOf(vertice,vertice.length+1);
+         newVertice[newVertice.length-1]=v;
+         vertice=newVertice;
 
         
     }
 
     public void  addEdge(Edge e){
+        Edge[]newEdges= Arrays.copyOf(edges,edges.length+1);
+        newEdges[newEdges.length-1]=e;
+        edges=newEdges;
 
     }
 
