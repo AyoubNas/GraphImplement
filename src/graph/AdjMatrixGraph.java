@@ -4,11 +4,15 @@ import graph.*;
 
 public class AdjMatrixGraph implements Graph{
 
-    private boolean[][] adjacencyMatrix = new boolean[50][50];
+    public boolean[][] adjacencyMatrix = new boolean[50][50];
     private Vertex[] vertice = new Vertex[50];
     private Edge[] edges = new Edge[50];
     private int lastVertex = -1;
     private int lastEdge = -1;
+
+    public int getLastVertex() {
+        return lastVertex;
+    }
 
     public AdjMatrixGraph(){
         int i;
@@ -20,23 +24,23 @@ public class AdjMatrixGraph implements Graph{
         }
     }
 
-     public void addVertex(Vertex v){
-     	int i;
+    public void addVertex(Vertex v){
+        int i;
         vertice[lastVertex+1]=v;
         lastVertex++;
 
         for(i=0;i<=lastVertex;i++){
-        	adjacencyMatrix[i][lastVertex]=false;
-        	adjacencyMatrix[lastVertex][i]=false;
+            adjacencyMatrix[i][lastVertex]=false;
+            adjacencyMatrix[lastVertex][i]=false;
         }
-     }
+    }
 
     public void addEdge(Edge e){
-	Vertex source=e.getExtremites()[0];
-	Vertex dest=e.getExtremites()[1];
-	int d=-1;
-	int s=-1;
-	int i=0;
+        Vertex source=e.getExtremites()[0];
+        Vertex dest=e.getExtremites()[1];
+        int d=-1;
+        int s=-1;
+        int i=0;
 
         edges[lastEdge+1]=e;
         lastEdge++;
@@ -56,59 +60,54 @@ public class AdjMatrixGraph implements Graph{
 	    }
     }
 
-
-
     public Edge[] getEdges(){
 	return this.edges;
     }
     public Vertex[] getVertexes()    {
 	return this.vertice;
     }
-
   
     public void removeEdge(Edge edge)  {
-	int i=0;
-	boolean flag=false;
-	Edge e=null;
-	Vertex source=null;
-	Vertex dest=null;
-	int d=-1;
-	int s=-1;
+        int i=0;
+        boolean flag=false;
+        Edge e=null;
+        Vertex source=null;
+        Vertex dest=null;
+        int d=-1;
+        int s=-1;
 
-	while((i<=lastEdge)&&(!flag)){
-	    if (edges[i].equals(edge)){
-			flag=true;
-			e=edges[i];
-	    }
-	    else{
-			i++;
-	    }
-	}
-	while(i<lastEdge){
-	    edges[i]=edges[i+1];
-		i++;
-	}
-	lastEdge--;
+        while((i<=lastEdge)&&(!flag)){
+            if (edges[i].equals(edge)){
+                flag=true;
+                e=edges[i];
+            }
+            else{
+                i++;
+            }
+        }
+        while(i<lastEdge){
+            edges[i]=edges[i+1];
+            i++;
+        }
+        lastEdge--;
 
-	if (e!=null){
-	    source=e.getExtremites()[0];
-	    dest=e.getExtremites()[1];
-	    for(i=0;i<lastVertex;i++){
-			if (vertice[i].equals(source)){
-				s=i;
-			}
-			if (vertice[i].equals(dest)){
-				d=i;
-			}
-	    }
-	    adjacencyMatrix[s][d]=false;
-		if(edge instanceof UndirectedEdge){
-			adjacencyMatrix[d][s]=false;
-		}
-	}
-
-	    
-}
+        if (e!=null){
+            source=e.getExtremites()[0];
+            dest=e.getExtremites()[1];
+            for(i=0;i<lastVertex;i++){
+                if (vertice[i].equals(source)){
+                    s=i;
+                }
+                if (vertice[i].equals(dest)){
+                    d=i;
+                }
+            }
+            adjacencyMatrix[s][d]=false;
+            if(edge instanceof UndirectedEdge){
+                adjacencyMatrix[d][s]=false;
+            }
+        }
+    }
 
     public void removeVertex(Vertex vertex)  {
         int i;
@@ -205,6 +204,5 @@ public class AdjMatrixGraph implements Graph{
         return res;
     }
 
-    
 }
 
