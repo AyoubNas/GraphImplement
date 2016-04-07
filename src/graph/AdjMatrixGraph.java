@@ -38,8 +38,8 @@ public class AdjMatrixGraph implements Graph{
     public void addEdge(Edge e){
         Vertex source=e.getExtremites()[0];
         Vertex dest=e.getExtremites()[1];
-        int d=-1;
-        int s=-1;
+        int d=0;
+        int s=0;
         int i=0;
 
         edges[lastEdge+1]=e;
