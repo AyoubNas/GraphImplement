@@ -2,7 +2,6 @@ package graph;
 import graph.*;
 import java.util.*;
 
-
 public class TestImpl {
     public static void main(String[] args) {
         AdjMatrixGraph g = new AdjMatrixGraph();
